@@ -1,0 +1,88 @@
+body {
+    margin: 0;
+    background-color: #f3f3f3;
+}
+ 
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+ 
+#parallax-container {
+    position: relative;
+    height: 100vh;
+    /* Ocupa el 100% de la altura de la ventana */
+    overflow: hidden;
+    /* Oculta el desbordamiento */
+}
+ 
+#layer1 {
+    /*Debe de tenerlo cada imagen*/position: absolute;
+    z-index: 10;
+    /* El más bajo el del fondo*/
+    background-image: url('rutaDeLaImgFondo');
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+ 
+        
+#layer2 {
+    position: absolute;
+    /*Debe de tenerlo cada imagen para ver el órden de las capas*/
+    z-index: 30;
+    /* Medio */
+    top: 0px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+ 
+
+#layer3 {
+    position: absolute;
+    /* El más alto */
+    z-index: 50;
+    top: 0px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+      
+#layer4 {
+    position: absolute;
+    z-index: 70;
+    /* El más alto */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+ 
+.completo {
+    width: 100%;
+    height: 800px;
+}
+ 
+/* --- Contenido (Debajo del Parallax) --- */
+.contenido {
+    padding: 50px 20px;
+    background-color: #cacccd;
+    text-align: center;
+    min-height: 500px;
+}
