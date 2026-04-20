@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+ 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parallax ejercicio Alumnos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+ 
+<body>
+ 
+    <div id="parallax-container">
+ 
+        <div id="layer1">
+            <img class="completo" src="imgs/FondoProfundo.jpg">
+        </div>
+ 
+        <div id="layer2">
+            <img class="completo" src="imgs/SiluetasADeGenteMuyAlFondo.png">
+        </div>
+ 
+        <div id="layer3">
+            <img class="completo" src="imgs/SiluetasDeGenteCaminandoAhoraSinMarcaDeAgua.png">
+        </div>
+ 
+        <div id="layer4">
+            <img class="completo" src="imgs/SiluetasDePersonasQuietas.png">
+        </div>
+ 
+    </div>
+ 
+    <section class="contenido">
+        <h1>Hola planeta</h1>
+    </section>
+ 
+    <script>
+        
+        document.addEventListener("DOMContentLoaded", function ()
+        {
+            const layer1 = document.getElementById('layer1');
+            const layer2 = document.getElementById('layer2');
+            const layer3 = document.getElementById('layer3');
+            const layer4 = document.getElementById('layer4');
+            const container = document.getElementById('parallax-container');
+ 
+            //Definimos las velocidades de desplazamiento
+            const speed1 = 0.9; // El fondo se mueve más rápido
+            const speed2 = 0.7;
+            const speed3 = 0.5; // El frente se mueve más lento
+            const speed4 = 0.3; // El frente se mueve más lento
+ 
+            function updateParallax()
+            {
+                // Es para que obtengamos la posición de scroll del elemento contenedor (respecto al top de la ventana)
+                const scrollOffset = window.scrollY;
+ 
+                // Multiplicamos el desplazamiento por la velocidad de cada capa
+                layer1.style.transform = `translate3d(0, ${scrollOffset * speed1}px, 0)`;
+                layer2.style.transform = `translate3d(0, ${scrollOffset * speed2}px, 0)`;
+                layer3.style.transform = `translate3d(0, ${scrollOffset * speed3}px, 0)`;
+                layer4.style.transform = `translate3d(0, ${scrollOffset * speed4}px, 0)`;
+ 
+            }
+ 
+            //Agregamos el listener para el evento
+            window.addEventListener("scroll", updateParallax);
+            updateParallax();
+        });
+    </script>
+</body>
+ 
+</html>
